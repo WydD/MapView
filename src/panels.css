@@ -1,0 +1,38 @@
+.search-panel,
+.clipboard-panel {
+  position: absolute;
+  top: -5px;
+  z-index: -1;
+  opacity: 0;
+  left: 50px;
+  transition: opacity 0.2s ease-in;
+  pointer-events: none;
+}
+
+.search-panel--is-open,
+.clipboard-panel--is-open {
+  z-index: 3;
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+  pointer-events: auto;
+}
+
+.filters-panel {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 375px;
+  height: calc(100% - 146px);
+  right: -375px;
+  top: 146px;
+  box-shadow: -2px 0 8px 0 rgba(0, 0, 0, 0.65);
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+.filters-panel--is-open {
+  z-index: 6;
+  opacity: 1;
+  right: 0;
+  transition: all 0.4s ease;
+}

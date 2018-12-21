@@ -1,0 +1,8 @@
+package.json
+node_modules/
+src/components/SelectionInfo.tsx
+src/components/Tools/Autocomplete.tsx
+src/components/Header.tsx
+src/components/Map.tsx
+src/components/InfoboxRight/FiltersSelection.tsx
+src/components/InfoboxRight/StructuresLinks.tsx

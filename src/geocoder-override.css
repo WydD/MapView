@@ -1,0 +1,82 @@
+.search-panel {
+  width: 320px;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+.mapboxgl-ctrl-geocoder .geocoder-pin-right {
+  display: none;
+}
+
+.mapboxgl-ctrl-geocoder {
+  border: 1px solid var(--dark-transparent);
+  padding: 0;
+}
+
+.mapboxgl-ctrl-geocoder input {
+  padding: 8px 0;
+}
+
+.mapboxgl-ctrl-geocoder ul {
+  padding: 0.5rem 40px;
+  list-style: none;
+  position: absolute;
+  border: 1px solid var(--dark);
+  border-top: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: white;
+  width: calc(100% + 2px);
+  left: -1px;
+  top: 70px;
+  margin: 0;
+  display: block !important;
+}
+
+.mapboxgl-ctrl-geocoder li {
+  transition: 0.3s all;
+  padding: 7px 10px;
+  border-bottom: 1px solid rgba(36, 66, 98, 0.1);
+  text-transform: uppercase;
+  transition: 0.3s all ease-in-out;
+  color: var(--dark);
+  cursor: pointer;
+}
+
+.mapboxgl-ctrl-geocoder li:hover {
+  background: rgba(36, 66, 98, 0.1);
+}
+
+.mapboxgl-ctrl-geocoder li:nth-of-type(odd) {
+  /* background: rgba(36, 66, 98, 0.1); */
+}
+
+.mapboxgl-ctrl-geocoder li:hover {
+  /* background: rgba(36, 66, 98, 0.4); */
+}
+
+.mapboxgl-ctrl-geocoder .geocoder-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  margin-right: 7px;
+  transform: translate(0, 4px);
+  display: inline-block;
+}
+
+.mapboxgl-ctrl-geocoder .geocoder-icon-search {
+  background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3e%3cpath fill='none' stroke='%23244262' d='M5.43257553,8.06742447 L1.5,12 L1,11.5 L4.93257553,7.56742447 C4.35046776,6.87269095 4,5.97727354 4,5 C4,2.790861 5.790861,1 8,1 C10.209139,1 12,2.790861 12,5 C12,7.209139 10.209139,9 8,9 C7.02272646,9 6.12730905,8.64953224 5.43257553,8.06742447 Z'/%3e%3c/svg%3e ")
+    50% 50% no-repeat;
+}
+
+.mapboxgl-ctrl-geocoder input {
+  display: inline-block;
+  width: calc(100% - 56px);
+  border-radius: 0;
+  border: 0;
+  border-bottom: none;
+  line-height: 1;
+  font-size: 0.75rem;
+  background: transparent;
+}

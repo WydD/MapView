@@ -1,0 +1,557 @@
+/**
+ * Improve font rendering.
+ */
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Roboto', sans-serif;
+}
+
+input,
+button,
+textarea {
+  font-family: 'Roboto', sans-serif;
+}
+
+/**
+ * Enable momentum scrolling on touch devices.
+ */
+.overflow-auto,
+.overflow-x-auto,
+.overflow-y-auto {
+  -webkit-overflow-scrolling: touch;
+}
+
+/**
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+
+/**
+ * Remove the gap between these elements and the bottom of their containers.
+ * See: https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+svg,
+img,
+canvas,
+video,
+audio,
+iframe {
+  vertical-align: middle;
+}
+
+/*
+ * Colors
+ */
+:root {
+  --dark: #244262; /* also text*/
+  --dark-transparent: rgba(36, 66, 98, 0.5);
+  --light: #def1f6;
+
+  --primary: #0b3954;
+  --secondary: #0169b1;
+
+  --accent: #f5a623;
+
+  --bar-chart: rgba(1, 105, 177, 0.5);
+}
+.c-primary {
+  color: var(--primary);
+}
+.bg-primary {
+  background: var(--primary);
+}
+.b-primary {
+  border-color: var(--primary);
+}
+.hover-primary:hover {
+  color: var(--primary);
+}
+.hover-bg-primary:hover {
+  background: var(--primary);
+}
+.fill-primary {
+  fill: var(--primary);
+}
+
+.c-secondary {
+  color: var(--secondary);
+}
+.bg-secondary {
+  background: var(--secondary);
+}
+.b-secondary {
+  border-color: var(--secondary);
+}
+.hover-secondary:hover {
+  color: var(--secondary);
+}
+.hover-bg-secondary:hover {
+  background: var(--secondary);
+}
+.hover-c-white:hover {
+  color: white;
+}
+.hover-fill-white:hover {
+  fill: white;
+}
+.fill-secondary {
+  fill: var(--secondary);
+}
+
+.c-accent {
+  color: var(--accent);
+}
+.bg-accent {
+  background: var(--accent);
+}
+.b-accent {
+  border-color: var(--accent);
+}
+.hover-accent:hover {
+  color: var(--accent);
+}
+.hover-bg-accent:hover {
+  background-color: var(--accent);
+}
+.fill-accent {
+  fill: var(--accent);
+}
+
+.c-dark {
+  color: var(--dark);
+}
+.b-dark {
+  border-color: var(--dark);
+}
+.hover-dark:hover {
+  color: var(--dark);
+}
+
+.c-dark-transparent {
+  color: var(--dark-transparent);
+}
+.b-dark-transparent {
+  border-color: var(--dark-transparent);
+}
+.bg-dark-transparent {
+  background: var(--dark-transparent);
+}
+.hover-bold:hover {
+  font-weight: bold;
+}
+
+/*
+ * Extending tachyons
+ */
+.grab {
+  cursor: grab;
+}
+
+.w-40p {
+  width: 40px;
+}
+.h-40p {
+  height: 40px;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.left-3 {
+  left: 4rem;
+}
+
+.left-25 {
+  left: 3rem;
+}
+
+/*
+ * Fix for slider in filters
+ */
+.rc-slider-tooltip {
+  z-index: 10;
+}
+.rc-slider-track {
+  background-color: #0169b1;
+}
+.rc-slider-handle {
+  border-color: #0169b1;
+  border-width: 1px;
+}
+.rc-slider-handle:hover,
+.rc-slider-handle:active {
+  border-color: #0169b1;
+}
+.rc-slider-handle:active {
+  box-shadow: 0 0 5px #0169b1;
+}
+
+/*
+ * Hovers
+ */
+.autocomplete-toggle-icon path {
+  fill: var(--primary);
+  transition: 0.7s;
+}
+.autocomplete-toggle-icon:hover path {
+  fill: var(--accent);
+}
+.selectionButtonHighlight .autocomplete-toggle-icon path {
+  color: white;
+}
+
+/*
+ * Override geocoder style
+ */
+.autosuggest-icon-search {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3e%3cpath fill='none' stroke='%23244262' d='M5.43257553,8.06742447 L1.5,12 L1,11.5 L4.93257553,7.56742447 C4.35046776,6.87269095 4,5.97727354 4,5 C4,2.790861 5.790861,1 8,1 C10.209139,1 12,2.790861 12,5 C12,7.209139 10.209139,9 8,9 C7.02272646,9 6.12730905,8.64953224 5.43257553,8.06742447 Z'/%3e%3c/svg%3e ") !important;
+}
+
+.autosuggest .react-autosuggest__container {
+  display: inline-block;
+  width: calc(100% - 20px);
+  padding-left: 10px;
+}
+.autosuggest .react-autosuggest__input {
+  border: none;
+  width: 100%;
+  font-size: 0.75rem;
+  padding: 10px 0;
+}
+
+.autosuggest .react-autosuggest__suggestions-container--open {
+  background: white;
+  padding: 0.5rem 1rem;
+  width: calc(100% + 2px);
+  position: absolute;
+  top: 70px;
+  left: -1px;
+  border: 1px solid var(--dark);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: 0;
+}
+
+.autosuggest .react-autosuggest__suggestions-container--open ul {
+  margin: 0;
+  padding: 0 20px;
+  list-style: none;
+}
+
+.autosuggest .react-autosuggest__suggestions-container--open li {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--dark-transparent);
+  transition: 0.3s all ease-in-out;
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+.autosuggest .react-autosuggest__suggestions-container--open li:hover {
+  background: rgba(36, 66, 98, 0.1);
+  cursor: pointer;
+}
+
+/*
+ * Autosuggest
+ */
+.autosuggest {
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.warning {
+  pointer-events: none;
+  transform: translate(-10px, 0);
+  opacity: 0;
+  transition: 0.3s all;
+}
+
+.warning.warning--is-visible {
+  transform: none;
+  opacity: 1;
+}
+
+.clear-btn {
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.3s;
+}
+
+.clear-btn--is-open {
+  opacity: 1;
+  z-index: 1;
+  transition: all 0.3s;
+}
+
+.moreInfoToggleText,
+.moreInfoToggleLines {
+  transition: 0.3s all ease-in-out;
+}
+
+.moreInfoToggle:hover .moreInfoToggleText {
+  color: var(--dark);
+}
+
+.moreInfoToggle:hover .moreInfoToggleLines > span {
+  background: var(--dark);
+}
+
+/*******************/
+/* Tooltip Infobox */
+/*******************/
+[data-tooltip]:before {
+  content: attr(data-tooltip);
+  position: fixed;
+  display: block;
+  background: white;
+  color: var(--primary);
+  padding: 4px 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  opacity: 0;
+  z-index: -1;
+  left: 10%;
+  top: 80px;
+  transform: translateX(-10%);
+}
+/* arrow */
+[data-tooltip]:after {
+  content: '';
+  position: fixed;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  left: 35%;
+  bottom: 86%;
+  border-width: 6px 6px 0;
+  border-top-color: white;
+  opacity: 0;
+  z-index: -1;
+  left: 10%;
+}
+/* Show tooltip on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  z-index: 1;
+  opacity: 1;
+  transition: all 0.2s ease-in;
+}
+
+/*******************/
+/*    RC-SLIDER    */
+/*******************/
+/* overwrite rc-slider tooltip's style */
+.rc-slider-tooltip-inner {
+  background-color: white;
+  color: var(--secondary);
+  height: 16px;
+  width: 20px;
+  border: 1px solid var(--secondary);
+  border-radius: 3px;
+  padding: 0.5px 0 !important;
+}
+/* remove arrow */
+.rc-slider-tooltip-placement-top .rc-slider-tooltip-arrow {
+  display: none;
+}
+/* this class rules the distance between the tooltip and the slider */
+.rc-slider-tooltip-placement-top {
+  padding-bottom: 2px;
+}
+
+/* social icons */
+.show-facebook-icons {
+  z-index: 1;
+  opacity: 1;
+  right: 64px;
+  transition: all 0.2s ease-in-out;
+}
+.show-twitter-icons {
+  z-index: 2;
+  opacity: 1;
+  right: 112px;
+  transition: all 0.25s ease-in-out;
+}
+.show-email-icons {
+  z-index: 3;
+  opacity: 1;
+  right: 160px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hide-facebook-icons {
+  z-index: -1;
+  opacity: 0;
+  right: 0;
+  transition: all 0.45s ease-in-out;
+}
+.hide-twitter-icons {
+  z-index: -2;
+  opacity: 0;
+  right: 0;
+  transition: all 0.4s ease-in-out;
+}
+.hide-email-icons {
+  z-index: -3;
+  opacity: 0;
+  right: 0;
+  transition: all 0.35s ease-in-out;
+}
+
+.clipboardOutputTooltip {
+  transition: 0.3s all;
+  opacity: 0;
+  transform: translate(20px, 0);
+}
+
+.clipboardOutputTooltip--is-active {
+  opacity: 1;
+  transform: translate(10px, 0);
+}
+
+.hint {
+  opacity: 0;
+  transform: translate(75px, 0);
+  transition: 0.3s all;
+  text-align: left;
+  left: 0;
+}
+
+.hint--is-visible {
+  opacity: 1;
+  transform: translate(65px, 0);
+}
+
+.f8 {
+  font-size: 0.6rem;
+}
+
+.selectionToggle {
+  color: var(--primary);
+  transition: 0.3s all ease-in-out;
+}
+
+.selectionToggle:hover,
+.selectionToggle--is-active {
+  background: var(--secondary);
+  color: white;
+}
+
+.btn {
+  background: transparent;
+  border: none;
+  display: inline-block;
+  text-align: left;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 0;
+  outline: none;
+}
+
+.btn span {
+  border: 0;
+  border-radius: 0;
+  text-transform: uppercase;
+  text-decoration: underline;
+  padding: 0;
+  margin: 0;
+  color: var(--dark);
+  cursor: pointer;
+  /* transition: 0.3s all ease-in-out; */
+}
+
+.btn:hover span {
+  /* color: var(--accent); */
+  font-weight: bold;
+}
+
+.statsDivider {
+  height: 13px;
+}
+
+.color-inherit {
+  color: inherit;
+}
+
+.w12r {
+  width: 12rem;
+}
+
+@media screen and (max-width: 960px) {
+  .w3-t {
+    width: 4rem;
+  }
+
+  .w4-t {
+    width: 8rem;
+  }
+
+  .w5r-t {
+    width: 5rem;
+  }
+
+  .w6r-t {
+    width: 6rem;
+  }
+
+  .w9r-t {
+    width: 9rem;
+  }
+
+  .dn-t {
+    display: none;
+  }
+
+  .mr0-t {
+    margin-right: 0;
+  }
+
+  .mh2-t {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .flex-column-t {
+    flex-direction: column;
+  }
+
+  .tc-t {
+    text-align: center;
+  }
+
+  .ph3-t {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .ph2-t {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .statsDivider {
+    height: 30px;
+  }
+}
+
+.mobileWarning {
+  pointer-events: none;
+  transform: translate(0, 10px);
+  opacity: 0;
+  transition: 0.3s all ease-in-out;
+}
+
+.mobileWarning--is-visible {
+  transform: none;
+  opacity: 1;
+  pointer-events: auto;
+}

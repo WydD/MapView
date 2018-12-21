@@ -1,0 +1,13 @@
+<svg
+  className="selection-circle-icon w-100 h-100"
+  xmlns="http://www.w3.org/2000/svg"
+  width="36"
+  height="36"
+  viewBox="0 0 36 36"
+>
+  <g fill="none" transform="translate(9 9)">
+    <path stroke="#244262" strokeDasharray="1 1" d="M9,9 L15.6225495,2.37745047" />
+    <circle cx="9" cy="9" r="2" fill="#244262" />
+    <circle cx="9" cy="9" r="9" stroke="#0169B1" />
+  </g>
+</svg>

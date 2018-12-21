@@ -1,0 +1,21 @@
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="36"
+    height="36"
+    viewBox="0 0 36 36"
+  >
+    <g fill="none" transform="translate(8 8)">
+      <path
+        stroke="#0169B1"
+        d="M8,11 C9.65685425,11 11,9.65685425 11,8 C11,6.34314575 9.65685425,5 8,5 C6.34314575,5 5,6.34314575 5,8"
+        transform="rotate(-86 8 8)"
+      />
+      <polygon fill="#244262" points="14.084 20 8 8 20 14 14.084 14" />
+      <path
+        stroke="#0169B1"
+        strokeWidth=".6"
+        d="M8,15 C11.8659932,15 15,11.8659932 15,8 C15,4.13400675 11.8659932,1 8,1 C4.13400675,1 1,4.13400675 1,8"
+        transform="rotate(-86 8 8)"
+      />
+    </g>
+  </svg>
