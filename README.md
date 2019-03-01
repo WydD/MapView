@@ -1,5 +1,5 @@
-# MapView
-Map view component of the Re-search Alps project 
+# Re-Search Alps - Map 
+
 
 ## Technological introduction
 This project was bootstrapped with [AccurApp](https://github.com/accurat/accurapp).
