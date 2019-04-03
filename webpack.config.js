@@ -35,7 +35,7 @@ module.exports = buildWebpackConfig([
     },
     node: {
       fs: 'empty',
-    },
+    },output: {publicPath: './'}
   }),
   workerLoader(),
   setOutput({ globalObject: 'this' }),

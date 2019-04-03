@@ -49,6 +49,12 @@ export class Stats extends React.Component<Props> {
 
       label01 = 'Children'
       label02 = 'Partners' // 'Linked Organizations'
+    } else {
+      return (
+          <div className="flex space-between">
+            Use the selection tools to inspect a region
+          </div>
+      )
     }
 
     return (

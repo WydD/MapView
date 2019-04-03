@@ -14,6 +14,9 @@ export class NumberOfStructures extends React.Component<Props> {
     const singleSelection = structures.length === 1
     const showTooltip = structures.length === 1 && structures[0].content.label.length > 36
 
+    if (structures.length) {
+      this.props.globalState.infoboxRight.toggle();
+    }
     const singleStructure = {
       icon: <SingleStructure style={{ width: '18px' }} />,
       label: (structures[0] && structures[0].content.label) || '',

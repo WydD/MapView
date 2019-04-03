@@ -101,7 +101,11 @@ export class Map extends React.Component<Props, LocalState> {
 
     // wait for data, then display
     map.on('draw.create', this.onPolygonSelectionDrawn)
-    map.on('load', () => this.recursiveCheckData())
+    map.on('load', () => {
+      this.recursiveCheckData();
+
+      this.loadNewGeodata(null);
+    })
     map.on('mouseenter', 'structures', this.highlightStructure)
     map.on('mouseleave', 'structures', this.unhighlightStructure)
 
@@ -147,10 +151,10 @@ export class Map extends React.Component<Props, LocalState> {
   }
 
   recursiveCheckData() {
-    if (this.props.globalState.geodata.length > 0) {
+    if (this.props.globalState.geocounter["response"] > 0) {
       this.putDataOnMap()
-      this.bindEvents()
-      this.bindReactions()
+      this.bindEvents();
+      this.bindReactions();
     } else {
       setTimeout(() => this.recursiveCheckData(), 200)
     }
@@ -303,7 +307,7 @@ export class Map extends React.Component<Props, LocalState> {
         {map && (
           <>
             <Tools mapObject={map} mapboxDrawObject={mapboxDraw} />
-            <div className="fixed absolute--center-horizontal" style={{top: 160, width: 270}}>
+            <div className="fixed absolute--center-horizontal" style={{top: 60, width: 270}}>
               <ClearBtn mapboxDrawObject={mapboxDraw} />
               <SelectionInfo />
             </div>

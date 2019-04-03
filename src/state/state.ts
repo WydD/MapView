@@ -269,7 +269,7 @@ export const StateModel = t
       self.parseBoundingBoxAndFetchGeodata(DEFAULT_BOUNDS)
       // setTimeout(() => self.parseBoundingBoxAndFetchGeodata(DEFAULT_BOUNDS), 200)
       // self.fetchTestGeodata()
-      self.fetchDefaultStats()
+      //self.fetchDefaultStats()
     }
 
     return { afterCreate }

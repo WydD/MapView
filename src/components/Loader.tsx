@@ -22,7 +22,7 @@ export class Loader extends React.Component<Props> {
       <div
         className={`fixed flex absolute--center-horizontal z-max br2 ba b--cerulean bg-white`}
         style={{
-          top: '160px',
+          top: '60px',
           boxShadow: BOX_SHADOW,
           borderWidth: '2px',
           width: '300px',

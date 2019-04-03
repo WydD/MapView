@@ -21,7 +21,7 @@ export const autocompleteZoom = 10
  */
 export const multiselectionKeyCode = 77 // m // shift 16
 
-export const defaultZoom = 8
+export const defaultZoom = 5
 
 /*
  * Mapbox instance configuration

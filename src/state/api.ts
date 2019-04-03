@@ -19,7 +19,18 @@ export const ApiModel = t.model('Api', {}).actions(self => {
     })
     return promise
   }
-
+  const urlParams = new URLSearchParams(window.location.search);
+  let search = urlParams.get("search");
+  if (search) {
+    try {
+      search = JSON.parse(search);
+    } catch {
+      console.error("Cant parse content", search);
+      search = null;
+    }
+  } else {
+    search = null;
+  }
   return {
     fetchGeodataByQuery: async (query: string) => {
       const url = `${apiEndpoint}structures/search/georesults`
@@ -29,8 +40,9 @@ export const ApiModel = t.model('Api', {}).actions(self => {
     },
 
     fetchGeodataByBoundingBox: async (geoGrid: ElasticsearchGeoGridType) => {
+      console.log(JSON.stringify({topLeft: geoGrid.topLeft, bottomRight: geoGrid.bottomRight, searchRequest: search}));
       const url = `${apiEndpoint}structures/search/geo/bbox`
-      const ret: any = await fetchData(url, 'georesults', 'post', geoGrid)
+      const ret: any = await fetchData(url, 'georesults', 'post', {topLeft: geoGrid.topLeft, bottomRight: geoGrid.bottomRight, searchRequest: search})
       const latlondata = mapToGeodataModel(ret.data)
       return latlondata
     },
@@ -57,7 +69,7 @@ export const ApiModel = t.model('Api', {}).actions(self => {
     fetchStructuresByPolygon: async (polygon: number[][]) => {
       const url = `${apiEndpoint}structures/search/geo/polygon`
       const _polygon = polygon.map(point => ({ lat: point[1], lon: point[0] }))
-      const ret: any = await fetchData(url, 'structure', 'post', _polygon)
+      const ret: any = await fetchData(url, 'structure', 'post', {polygon: _polygon, searchRequest: search})
       return ret.data
     },
 
@@ -66,6 +78,7 @@ export const ApiModel = t.model('Api', {}).actions(self => {
       const ret: any = await fetchData(url, 'structure', 'post', {
         center: { lon: center[0], lat: center[1] },
         distance: `${radiusInKm}km`,
+        searchRequest: search
       })
       return ret.data
     },

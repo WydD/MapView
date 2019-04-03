@@ -2,8 +2,8 @@ import { SplitBoundingBoxType, ElasticsearchGeoGridType, GeogridType } from '../
 import { compact } from 'lodash'
 import { array } from 'mobx-state-tree/dist/internal'
 
-const latSteps = 720 // 360 // number of steps
-const lonSteps = 360 // 180 // number of steps
+const latSteps = 72 // 360 // number of steps
+const lonSteps = 36 // 180 // number of steps
 const latRange = [90, -90]
 const lonRange = [-180, 180]
 const latStep = (Math.abs(latRange[0]) + Math.abs(latRange[1])) / latSteps
